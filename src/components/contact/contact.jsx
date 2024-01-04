@@ -1,4 +1,4 @@
-import GoogleMap from "../google-map/google-map";
+import GoogleMaps from "../google-map/google-map";
 import Button from "./../../form-elements/button/button";
 import Input from "./../../form-elements/input/input";
 import Textarea from "./../../form-elements/textarea/textarea";
@@ -44,7 +44,7 @@ const Contact = () => {
         ></Textarea>
         <Button type={"button"} className="rounded bg-green-500 text-white duration-200 hover:bg-green-400 py-4 " children={"SEND"} />
       </form>
-      <GoogleMap/>
+      <GoogleMaps/>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci"
 
 const Navbar = () => {
 
-  const [isActive, setIsActive] = useState(`${listItems[0].link}`, true);
+  const [isActive, setIsActive] = useState();
 
   const onIsActive = (navLink) => {
     setIsActive(navLink);
