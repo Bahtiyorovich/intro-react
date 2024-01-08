@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { listItems } from "../../constants/data"
 import { useState } from "react"
-import { CiSearch } from "react-icons/ci"
 
 const Navbar = () => {
 

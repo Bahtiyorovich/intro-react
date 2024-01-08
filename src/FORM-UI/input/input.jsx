@@ -1,5 +1,5 @@
 
-const Input = ({id, type, classes, name, placeholder}) => {
+const Input = ({id, type, classes, name, placeholder, onChange}) => {
   return (
       <input 
         type={type} 
@@ -7,6 +7,7 @@ const Input = ({id, type, classes, name, placeholder}) => {
         className={classes} 
         name={name} 
         placeholder={placeholder}
+        onChange={onChange}
       />
   )
 }

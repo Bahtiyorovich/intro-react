@@ -1,6 +1,6 @@
 
 import { AboutBanner } from '../../assets';
-import Button from './../../form-elements/button/button';
+import Button from './../../FORM-UI/button/button';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles

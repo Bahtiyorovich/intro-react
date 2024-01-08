@@ -1,7 +1,7 @@
 import GoogleMaps from "../google-map/google-map";
-import Button from "./../../form-elements/button/button";
-import Input from "./../../form-elements/input/input";
-import Textarea from "./../../form-elements/textarea/textarea";
+import Button from "./../../FORM-UI/button/button";
+import Input from "./../../FORM-UI/input/input";
+import Textarea from "./../../FORM-UI/textarea/textarea";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..

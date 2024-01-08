@@ -1,5 +1,5 @@
 
-import Button from './../../form-elements/button/button';
+import Button from './../../FORM-UI/button/button';
 const Product = ({product}) => {
   return (
     <div 
