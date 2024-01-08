@@ -1,20 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {HomePage, Navbar, Footer, Products, About, Blog, Contact, SignUp} from './components';
-import { Route, Routes } from 'react-router-dom';
-import Auth from './Auth/auth';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 const App = () => {
-
-  const [user, setUser] = useState(false)
-
-  if(!user){
-    return (
-      <>
-        <Auth/>
-      </>
-    )
-  }
-
+  
   return (
     <div className="overflow-hidden">
       <Navbar/>

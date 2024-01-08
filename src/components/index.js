@@ -3,7 +3,7 @@ export {default as Footer} from './footer/footer';
 export {default as HomePage} from './home-page/home-page';
 export {default as About} from './about/about';
 export {default as Contact} from './contact/contact';
-export {default as Login} from './login/login';
+export {default as SignIn} from './sign-in/sign-in';
 export {default as SignUp} from './sign-up/sign-up';
 export {default as Products} from './products/products';
 export {default as Blog} from './blog/blog';
