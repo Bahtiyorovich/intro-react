@@ -4,7 +4,7 @@ import { Avacado, Broukli, Bulgor, Chesnok, Joxori, Karam, Kareski, Kartoshka, P
 export const listItems = [
   {
     link: 'Home',
-    url: '/',
+    url: '/home',
   },
   {
     link: 'Shop',

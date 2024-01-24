@@ -3,7 +3,6 @@ export const setItem = (key, data, expirationDays = 1) => {
   try {
       const expires = new Date();
       expires.setDate(expires.getDate() + expirationDays);
-
       document.cookie = `${key}=${data}; expires=${expires.toUTCString()}; path=/`;
   } catch (error) {
       console.log('Error saving data...');

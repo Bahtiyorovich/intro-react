@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import { products } from "../../constants/data"
 import Product from "./product"
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
-AOS.init();
-
 
 const Products = () => {
+  
+  useEffect(()=> {
+    AOS.init();
+  }, [])
+
+
   return (
     <div className="w-full min-h-[100vh] p-20">
       <div 
@@ -20,7 +25,7 @@ const Products = () => {
       </div>
       <div className="grid grid-cols-4 gap-4 py-20">
           {products.map(item => (
-            <Product product={item}/>
+            <Product product={item} key={item.title}/>
           ))}
       </div>
     </div>

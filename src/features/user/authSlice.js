@@ -1,64 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, loginUser, logoutUser } from "../actions/authActions";
-import { setItem, removeItem } from "../../helpers/cookie-storage"; // Import your cookie functions
 
-const authState = {
-  user: null,
-  loading: false,
-  error: "",
-};
+const initialState = {
+    isLoading: false,
+    loggedIn: false,
+    error: null,
+    user: null,
+}
 
-const authSlice = createSlice({
-  name: "auth",
-  initialState: authState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(registerUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(registerUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user = action.payload;
-         // Save user data in a cookie
-         setItem('user', JSON.stringify(action.payload));
-      })
-      .addCase(registerUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
+export const authSlice = createSlice({
+    name: 'auth',
+    initialState,
 
-    builder
-      .addCase(loginUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user = action.payload;
-         // Save user data in a cookie
-         setItem('user', JSON.stringify(action.payload));
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
+    // Metodlar yoziladigan reduserlar:
+    reducers: {
 
-    builder
-      .addCase(logoutUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(logoutUser.fulfilled, (state) => {
-        state.loading = false;
-        state.user = null;
-        removeItem('user');
-      })
-      .addCase(logoutUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
-  },
-});
+        // Register va Login 
+        signUserStart: state => {
+            state.isLoading = true
+        },
+        signUserSuccess: (state, action ) => {
+            state.isLoading = false
+            state.loggedIn = true
+            state.user = action.payload
+        },
+        signUserFailure:( state, action )=> {
+            state.isLoading = false
+            state.loggedIn = false
+            state.error = action.payload
+        },
 
-export default authSlice.reducer;
-export const { changeStateTrue, changeStateFalse, clearResponse } =
-  authSlice.actions;
+        logoutUser: state => {
+            state.user = null
+            state.loggedIn = false
+        }
+
+    }
+})
+
+export const {signUserStart, signUserFailure,signUserSuccess, logoutUser} = authSlice.actions
+export default authSlice.reducer
+

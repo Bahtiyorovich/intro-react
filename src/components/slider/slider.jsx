@@ -22,7 +22,7 @@ const SimpleSlider = () => {
   return (
     <Slider {...settings}>
       {slideData.map(slide =>(
-        <div key={slide.id}>
+        <div key={slide.title}>
           <div className='flex items-center justify-start w-[100vw] h-[80vh]'>
             <img src={slide.image} alt={slide.title} className='w-1/2 h-3/2'/>
             <div>
